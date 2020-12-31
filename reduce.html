@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Reduce Functional Programming Javascript</title>
+</head>
+<body>
+	<script>
+		let products = [
+			{ name: 'oragne', amount: 100 },
+			{ name: 'Apple', amount: 200 },
+			{ name: 'Mango', amount: 300 },
+		]
+
+
+		//imperative programming
+		let totalAmount = 0
+
+		products.forEach(function(product, index) {
+			totalAmount += product.amount
+		})
+
+		console.log('Imperative totalAmount ', totalAmount)
+
+
+		let newTotalAmount = products.reduce(function(sum, product){
+			return sum + product.amount
+		},0)
+		console.log('Imperative newTotalAmount ', newTotalAmount)
+	</script>
+</body>
+</html>
