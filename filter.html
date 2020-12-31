@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let students = [
+		{ name: 'Mg Mg', age: 20, gender: 'male' }, 
+		{ name: 'Aung Aung', age: 21, gender: 'male' }, 
+		{ name: 'Zaw Zaw', age: 22, gender: 'male' },
+		{ name: 'Nu Nu', age: 22, gender: 'female' },  
+		{ name: 'Su Su', age: 23, gender: 'female' },  
+		{ name: 'Hla Hla', age: 20, gender: 'female' },  
+		]
+
+
+		//imperative programming
+		let maleStudents = []
+
+		students.forEach(function(student, index) {
+			if(student.gender == 'male'){
+				maleStudents.push(student)
+			}
+		})
+
+		console.log('Imperative maleStudents ', maleStudents)
+
+
+		let isMale = (student) => student.gender === 'male'
+		let isFemale = (student) => student.gender != 'male'
+		let newMaleStudents = students.filter(isMale)
+		let newFemaleStudents = students.filter(isFemale)
+
+		console.log('functional newMaleStudents ', newMaleStudents)
+		console.log('functional newFemaleStudents ', newFemaleStudents)
+	</script>
+</body>
+</html>
