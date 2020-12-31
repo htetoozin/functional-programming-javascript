@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let students = [
+			{ name: 'Mg Mg', age: 20, gender: 'male' }, 
+			{ name: 'Aung Aung', age: 21, gender: 'male' }, 
+			{ name: 'Zaw Zaw', age: 22, gender: 'male' },
+			{ name: 'Nu Nu', age: 22, gender: 'female' },  
+			{ name: 'Su Su', age: 23, gender: 'female' },  
+			{ name: 'Hla Hla', age: 20, gender: 'female' },  
+		]
+
+
+		//imperative programming
+		let names = []
+
+		students.forEach(function(student, index) {
+			names.push(student.name)
+		})
+
+		console.log('Imperative names ', names)
+
+		let newName = (student) => student.name
+		let newNames = students.map(newName)
+
+		console.log('functional names ', newNames)
+
+	</script>
+</body>
+</html>
