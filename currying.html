@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Currying</title>
+</head>
+<body>
+	<script src="ramda.js"></script>
+	<script>
+		let students = [
+			{ name: 'Mg Mg', age: 20, gender: 'male' }, 
+			{ name: 'Aung Aung', age: 21, gender: 'male' }, 
+			{ name: 'Zaw Zaw', age: 22, gender: 'male' },
+			{ name: 'Nu Nu', age: 22, gender: 'female' },  
+			{ name: 'Su Su', age: 23, gender: 'female' },  
+			{ name: 'Hla Hla', age: 20, gender: 'female' }  
+		]
+
+		let isMale = (obj, gender) => obj.gender == gender
+		let maleStudent = students.filter(student => isMale(student, 'male'))
+
+		console.log('filter male student', maleStudent)
+
+		//Manual currying
+		let femaleStudent = 
+				students =>
+					gender =>
+						students.filter(student => student.gender == gender)
+
+		console.log('filter female student ', femaleStudent(students)('female'))
+
+		//Ramda.js library currying
+		let ramdaMaleStudent = R.curry((obj, gender) => obj.gender == gender)
+		let rmadaMaleStudent = students.filter(student => ramdaMaleStudent(student, 'male'))
+		console.log('filter rmada.js male student', rmadaMaleStudent)
+
+	</script>			
+</body>
+</html>

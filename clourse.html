@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Clourse Javascript</title>
+</head>
+<body>
+	<script>
+		// let name = 'Mg Mg';
+		// console.log('name ', name)
+		// function greet(){
+		// 	return `Hello ${name}`;
+		// }
+		// name = 'demo';
+		// console.log('name ', name)
+		// console.log(greet())
+
+		function factorial(n)
+		{
+			if(n ==0)
+			{
+				return 1;
+			}
+			else 
+			{
+				return n* factorial(n-1);
+			}
+		}
+		//console.log(factorial(5))
+		// 1. factorial(5)= 5* factorial (4) //120
+		// 2. factorial(4) = 4 * factorial(3) // 24
+		// 3. factorial(3) = 3 * factorial(2) // 6
+		// 4. factorial(2) = 2 * factorial(1) ; //2
+		// 5. factorial(1) = 1 ;
+
+		var addOne = function(num) {
+		    return function() { 
+				console.log(num)
+		        console.log(num++); 
+		    };
+		};
+
+		var f = addOne(1);
+
+		f(); // 1
+		f(); // 2
+		f(); // 3
+
+		let result = 0
+		const greet = () => `Hello ${result}`
+		result = 1
+		console.log(greet())
+	</script>
+</body>
+</html>
